@@ -1,34 +1,43 @@
 <?php
+//        interface parent1 {
+//            function calc($a, $b);
+//        }
+//
+//        interface parent2 {
+//            function sub($c, $d);
+//        }
+//
+//        class childClass implements parent1, parent2{
+//            public function calc($a, $b){
+//                echo $a + $b;
+//            }
+//
+//            public function sub($c, $d) {
+//                echo $c - $d;
+//            }
+//        }
+//
+//        $test = new childClass();
+//        $test->calc(20, 35);
+//        echo "\n";
+//        $test->sub(200, 35);
+          interface MyInterfaceName{
 
-        interface Animal {
-            public function makeSound();
-        }
+              public function method1();
+              public function method2();
+          }
 
-        class Cat implements Animal {
-            public function makeSound() {
-                echo "Meow";
-            }
-        }
+          class MyClassName implements MyInterfaceName{
 
-        class Dog implements Animal {
-            public function makeSound(){
-                echo "Bark";
-            }
-        }
+              public function method1(){
+                  echo "Method1 Called" . "\n";
+              }
 
-        class Mouse implements Animal {
-            public function makeSound(){
-                echo " Squeak";
-            }
-        }
+              public function method2(){
+                  echo "Method2 Called" . "\n";
+              }
+          }
 
-        $cat = new Cat();
-        $dog = new Dog();
-        $mouse = new Mouse();
-        $animals = array($cat, $dog, $mouse);
-
-        // Tell the animals to make a sound
-        foreach($animals as $animal) {
-            $animal->makeSound();
-        }
-
+          $obj = new MyClassName();
+          $obj->method1();
+          $obj->method2();
