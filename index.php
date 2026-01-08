@@ -9,4 +9,3 @@
     }
 
 echo Father::mark;
-echo Father::mark;
