@@ -7,5 +7,6 @@
         }
 
     }
-wddwdwwdwdwdw
-    echo Father::mark;
+
+echo Father::mark;
+echo Father::mark;
