@@ -1,76 +1,29 @@
-<?php
-//        interface parent1 {
-//            function calc($a, $b);
-//        }
-//
-//        interface parent2 {
-//            function sub($c, $d);
-//        }
-//
-//        class childClass implements parent1, parent2{
-//            public function calc($a, $b){
-//                echo $a + $b;
-//            }
-//
-//            public function sub($c, $d) {
-//                echo $c - $d;
-//            }
-//        }
-//
-//        $test = new childClass();
-//        $test->calc(20, 35);
-//        echo "\n";
-//        $test->sub(200, 35);
-        //   interface MyInterfaceName{
+<?php 
 
-        //       public function method1();
-        //       public function method2();
-        //   }
+    interface shape {
+      public function area(): float;
+   }
+   class square implements shape {
+      var $side;
+      public function __construct($arg1) {
+         $this->side = $arg1; 
+      }
+      public function area(): float {
+         return pow($this->side, 2);
+      }
+   }
+   class circle implements shape {
+      var $radius;
+      public function __construct($arg1) {
+         $this->radius = $arg1;
+      }
+      public function area(): float {
+         return pow($this->radius,2)*pi();
+      }
+   }
 
-        //   class MyClassName implements MyInterfaceName{
+   $sq = new square(5);
+   echo "Side: " . $sq->side .  " Area of Square: ". $sq->area() . PHP_EOL;
 
-        //       public function method1(){
-        //           echo "Method1 Called" . "\n";
-        //       }
-
-        //       public function method2(){
-        //           echo "Method2 Called" . "\n";
-        //       }
-        //   }
-
-        //   $obj = new MyClassName();
-        //   $obj->method1();
-        //   $obj->method2();
-
-        // interface Animal {
-        //     public function makeSound();
-        // }
-        // class Cat implements Animal {
-        //     public function makeSound() {
-        //         echo "Meow";
-        //     }
-        // }
-
-        // class Dog implements Animal {
-        //     public function makeSound() {
-        //         echo "Bark";
-        //     }
-        // }
-
-        // class Mouse implements Animal {
-        //     public function makeSound() {
-        //         echo "Squeak";
-        //     }
-        // }
-
-        // $cat = new Cat();
-        // $dog = new Dog();
-        // $mouse = new Mouse();
-        // $animals = array($cat, $dog, $mouse);
-
-        // // Tell the animals to make a sound
-        // foreach($animals as $animal) {
-        // $animal->makeSound();
-        // }
-
-        
+   $cir = new circle(5);
+   echo "Radius: " . $cir->radius .  " Area of Circle: " . $cir->area(). PHP_EOL;
