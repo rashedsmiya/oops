@@ -21,23 +21,56 @@
 //        $test->calc(20, 35);
 //        echo "\n";
 //        $test->sub(200, 35);
-          interface MyInterfaceName{
+        //   interface MyInterfaceName{
 
-              public function method1();
-              public function method2();
-          }
+        //       public function method1();
+        //       public function method2();
+        //   }
 
-          class MyClassName implements MyInterfaceName{
+        //   class MyClassName implements MyInterfaceName{
 
-              public function method1(){
-                  echo "Method1 Called" . "\n";
-              }
+        //       public function method1(){
+        //           echo "Method1 Called" . "\n";
+        //       }
 
-              public function method2(){
-                  echo "Method2 Called" . "\n";
-              }
-          }
+        //       public function method2(){
+        //           echo "Method2 Called" . "\n";
+        //       }
+        //   }
 
-          $obj = new MyClassName();
-          $obj->method1();
-          $obj->method2();
+        //   $obj = new MyClassName();
+        //   $obj->method1();
+        //   $obj->method2();
+
+        // interface Animal {
+        //     public function makeSound();
+        // }
+        // class Cat implements Animal {
+        //     public function makeSound() {
+        //         echo "Meow";
+        //     }
+        // }
+
+        // class Dog implements Animal {
+        //     public function makeSound() {
+        //         echo "Bark";
+        //     }
+        // }
+
+        // class Mouse implements Animal {
+        //     public function makeSound() {
+        //         echo "Squeak";
+        //     }
+        // }
+
+        // $cat = new Cat();
+        // $dog = new Dog();
+        // $mouse = new Mouse();
+        // $animals = array($cat, $dog, $mouse);
+
+        // // Tell the animals to make a sound
+        // foreach($animals as $animal) {
+        // $animal->makeSound();
+        // }
+
+        
