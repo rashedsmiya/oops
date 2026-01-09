@@ -3,20 +3,24 @@
     interface shape {
       public function area(): float;
    }
+
    class square implements shape {
       var $side;
       public function __construct($arg1) {
          $this->side = $arg1; 
       }
+
       public function area(): float {
          return pow($this->side, 2);
       }
    }
+
    class circle implements shape {
       var $radius;
       public function __construct($arg1) {
          $this->radius = $arg1;
       }
+      
       public function area(): float {
          return pow($this->radius,2)*pi();
       }
@@ -27,3 +31,4 @@
 
    $cir = new circle(5);
    echo "Radius: " . $cir->radius .  " Area of Circle: " . $cir->area(). PHP_EOL;
+
