@@ -107,38 +107,137 @@
 //   echo "Radius: " . $cir->radius .  " Area of Circle: " . $cir->area(). PHP_EOL;
 
 
-interface IPillage
+//interface IPillage
+//{
+//    public function emptyBankAccounts();
+//    public function burnDocuments();
+//}
+//
+//class Employee
+//{
+//    public function emptyBankAccounts()
+//    {
+//       echo "Call employees and ask to transfer funds to Swiss bank account";
+//    }
+//    public function burnDocuments()
+//    {
+//        echo "Torch the office suite of the employee";
+//    }
+//}
+//
+//class Executive extends Employee implements IPillage
+//{
+//    public function emptyBankAccounts()
+//    {
+//        echo "Call executive and ask to transfer funds to Swiss bank account";
+//    }
+//    public function burnDocuments()
+//    {
+//        echo "Torch the office suite of the executive";
+//    }
+//}
+//
+//$obj1 = new Employee();
+//$obj2 = new Executive();
+//$obj1->emptyBankAccounts();
+//echo "\n";
+//$obj2->emptyBankAccounts();
+
+
+/*
+|--------------------------------------------------------------------------
+| Payment Gateway Interface
+|--------------------------------------------------------------------------
+| This defines a contract that all payment gateways must follow
+*/
+
+interface PaymentGatewayInterface
 {
-    public function emptyBankAccounts();
-    public function burnDocuments();
+    public function pay(float $amount): bool;
+
+    public function refund(float $amount): bool;
 }
 
-class Employee
+/*
+|--------------------------------------------------------------------------
+| Stripe Payment Implementation
+|--------------------------------------------------------------------------
+*/
+
+class StripePayment implements PaymentGatewayInterface
 {
-    public function emptyBankAccounts()
+    public function pay(float $amount): bool
     {
-       echo "Call employees and ask to transfer funds to Swiss bank account";
+        echo "Stripe: Payment of $$amount successful\n";
+        return true;
     }
-    public function burnDocuments()
+
+    public function refund(float $amount): bool
     {
-        echo "Torch the office suite of the employee";
+        echo "Stripe: Refund of $$amount successful\n";
+        return true;
     }
 }
 
-class Executive extends Employee implements IPillage
+/*
+|--------------------------------------------------------------------------
+| PayPal Payment Implementation
+|--------------------------------------------------------------------------
+*/
+
+class PaypalPayment implements PaymentGatewayInterface
 {
-    public function emptyBankAccounts()
+    public function pay(float $amount): bool
     {
-        echo "Call executive and ask to transfer funds to Swiss bank account";
+        echo "PayPal: Payment of $$amount successful\n";
+        return true;
     }
-    public function burnDocuments()
+
+    public function refund(float $amount): bool
     {
-        echo "Torch the office suite of the executive";
+        echo "PayPal: Refund of $$amount successful\n";
+        return true;
     }
 }
 
-$obj1 = new Employee();
-$obj2 = new Executive();
-$obj1->emptyBankAccounts();
-echo "\n";
-$obj2->emptyBankAccounts();
+/*
+|--------------------------------------------------------------------------
+| Order Service (Dependency Injection)
+|--------------------------------------------------------------------------
+| This class depends on the interface, NOT a concrete class
+*/
+
+class OrderService
+{
+    private PaymentGatewayInterface $paymentGateway;
+
+    public function __construct(PaymentGatewayInterface $paymentGateway)
+    {
+        $this->paymentGateway = $paymentGateway;
+    }
+
+    public function checkout(float $amount): void
+    {
+        $this->paymentGateway->pay($amount);
+    }
+
+    public function refund(float $amount): void
+    {
+        $this->paymentGateway->refund($amount);
+    }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Usage
+|--------------------------------------------------------------------------
+*/
+
+// Change implementation here without touching OrderService
+$paymentGateway = new StripePayment();
+// $paymentGateway = new PaypalPayment();
+
+$order = new OrderService($paymentGateway);
+
+$order->checkout(1000);
+$order->refund(500);
