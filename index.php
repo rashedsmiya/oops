@@ -78,3 +78,67 @@
 //        $bike = new Bike();
 //        $bike->getTotalFare();
 
+//   interface shape {
+//       public function area(): float;
+//   }
+//   class square implements shape {
+//       public $side;
+//       public function __construct($arg1) {
+//           $this->side = $arg1;
+//       }
+//       public function area(): float {
+//           return pow($this->side, 1);
+//       }
+//   }
+//   class circle implements shape {
+//       public $radius;
+//       public function __construct($arg1) {
+//           $this->radius = $arg1;
+//       }
+//       public function area(): float {
+//           return pow($this->radius,1)*pi();
+//       }
+//   }
+//
+//   $sq = new square(5);
+//   echo "Side: " . $sq->side .  " Area of Square: ". $sq->area() . PHP_EOL;
+//
+//   $cir = new circle(5);
+//   echo "Radius: " . $cir->radius .  " Area of Circle: " . $cir->area(). PHP_EOL;
+
+
+interface IPillage
+{
+    public function emptyBankAccounts();
+    public function burnDocuments();
+}
+
+class Employee
+{
+    public function emptyBankAccounts()
+    {
+       echo "Call employees and ask to transfer funds to Swiss bank account";
+    }
+    public function burnDocuments()
+    {
+        echo "Torch the office suite of the employee";
+    }
+}
+
+class Executive extends Employee implements IPillage
+{
+    public function emptyBankAccounts()
+    {
+        echo "Call executive and ask to transfer funds to Swiss bank account";
+    }
+    public function burnDocuments()
+    {
+        echo "Torch the office suite of the executive";
+    }
+}
+
+$obj1 = new Employee();
+$obj2 = new Executive();
+$obj1->emptyBankAccounts();
+echo "\n";
+$obj2->emptyBankAccounts();
