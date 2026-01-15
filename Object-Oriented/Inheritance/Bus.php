@@ -27,10 +27,4 @@
     echo "<br/>";
     echo 'Fuel Amount is: ' . $bus->fuelAmount();
 
-
-
-
-
-
-
-
+ 

@@ -8,7 +8,7 @@
         {
             return 10;
         }
-
+        
         public function capacity()
         {
             return $this->capacity;
