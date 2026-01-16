@@ -2,7 +2,13 @@
 
     class Vehicle {
 	
-	public $capacity = 15;
+	public $capacity;
+	public $fuelAmount;
+
+	public function __construct($capacity, $fuelAmount) {
+		$this->capacity   = $capacity;
+		$this->fuelAmount = $fuelAmount;
+	}
 
 	public function fuelAmount() {
 		return 10;

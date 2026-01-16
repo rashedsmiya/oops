@@ -7,4 +7,6 @@
     }
 
     $newCar = new NewCar();
-    echo $newCar->applyBrakes();
+    echo $newCar->fuelAmount();
+
+    

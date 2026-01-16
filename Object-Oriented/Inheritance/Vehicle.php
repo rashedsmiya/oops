@@ -4,6 +4,8 @@
     {
         public $capacity = 15;
 
+         
+
         public function fuelAmount()
         {
             return 10;
