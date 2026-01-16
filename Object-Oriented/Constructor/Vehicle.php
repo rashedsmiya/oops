@@ -1,5 +1,4 @@
 <?php 
-
     class Vehicle {
 	
 	public $capacity;
