@@ -1,8 +1,9 @@
 <?php 
     
-    trait Bar {
-        public function message() {
-        echo "How are you";
-    }
+     trait Bar {
+        public function message(){
+            echo "Welcome to foo";
+        }
+     }
 
     
