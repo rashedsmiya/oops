@@ -1,6 +1,16 @@
 <?php 
 
     require 'src/Test/Vehicle.php';
+    require 'src/Test/Bus.php';
 
-    $obj = new Vehicle();
+    use src\Test\Bus;
+
+    $obj = new src\Test\Vehicle();
     $obj->fuelAmount();
+
+    $bus = new Bus();
+    $bus->test();
+
+    
+
+
