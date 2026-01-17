@@ -2,7 +2,7 @@
 
    namespace App;
 
-   class Truc {
+   class Truck {
     function __construct()
     {
         echo "done";

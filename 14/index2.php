@@ -4,7 +4,7 @@
 
     use App\Test\Bus;
 
-    $obj = new App\Test\Vehicle();
+    $obj = new App\City\Vehicle();
     $obj->fuelAmount();
 
     $bus = new Bus();
