@@ -1,12 +1,8 @@
 <?php 
      
-      require "user.php";
-      require "student.php";
+       require "user.php";
 
-      use School\User;
+       use App\User;
 
-      $user = new User();
-      $user->get();
-
-      $user = new User();
-      $user->get();
+       $user = new User;
+       $user->get();
