@@ -10,3 +10,6 @@
 
        $user2 = new School\User;
        $user2->get();
+
+       $student = new School\Student;
+       $student->display();
