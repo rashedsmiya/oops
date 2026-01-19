@@ -9,10 +9,11 @@
     use App\Model\User;
 
     $std = new Student;
-
+    
     $staf = new Staf;
 
     $main = new Main($staf);
+    
     $main->hello();
 
 

@@ -2,7 +2,6 @@
 
     namespace App\Model;
  
-
     class User 
     {
         public $name = "John Doe";
@@ -14,3 +13,5 @@
             echo "Address is: {$this->address} <br/>";
         }
     }
+
+    
