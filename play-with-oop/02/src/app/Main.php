@@ -1,11 +1,9 @@
 <?php 
-    
-     
+
     namespace App;
-
     use App\Model\User;
-
-    class Main {
+    class Main 
+    {
         public $user;
 
         public function __construct(User $user)

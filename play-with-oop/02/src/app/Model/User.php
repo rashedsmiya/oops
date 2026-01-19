@@ -1,17 +1,16 @@
-<?php  
+<?php 
 
-    namespace App\Model;
- 
-    class User 
-    {
-        public $name = "John Doe";
-        public $address = "Dhaka";
+     namespace App\Model;
 
-        public function display(): void
-        {
-            echo "Name is: {$this->name} <br/>";
-            echo "Address is: {$this->address} <br/>";
-        }
-    }
+     class User  
+     {
+         public $name    = "John Doe";
+         public $address = "Dhaka";
 
-    
+
+         public function display()
+         {
+            echo "Name is : {$this->name} <br>";
+            echo "Addredd is : {$this->address} <br>";
+         }
+     }

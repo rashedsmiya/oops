@@ -1,17 +1,15 @@
 <?php 
     
-     namespace App; 
+    namespace App;
 
-     use App\Model\User;
+    use App\Model\User;
 
-     class Student extends User {
-
-        public $roll = 103;
-
-        public function getRoll(): int
-        {
-            return (int) $this->roll;
-        }
-     }
-
-     
+    class Student extends User
+    {
+      public $roll = 123;
+      
+      public function getRoll(): int 
+      {
+        return $this->roll;
+      }
+    }

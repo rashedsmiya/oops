@@ -1,16 +1,13 @@
 <?php 
 
-    namespace App;
+     namespace App;
 
-    use App\Model\User;
+     use App\Model\User;
 
-    class Teacher extends User 
-    {
+     class Teacher extends User 
+     {
         public $salary = 70000;
-
-        public function getSalary(): int
-        {
-            return (int) $this->salary;
+        public function getSalary(){
+            return $this->salary;
         }
-    }
-        
+     }
