@@ -1,7 +1,7 @@
 <?php 
 
-    require 'vendor/autoload.php';
-    
+    require 'vender/autoload.php';
+
     use App\Main;
 
     $main = new Main;
@@ -13,18 +13,6 @@
     $main6 = new Main;
     $main7 = new Main;
     $main8 = new Main;
-    $main9 = new Main;
-    $main10 = new Main;
+    $main9->display();
 
-    echo Main::$numberOfInstance;
-
-    echo "<br>";
-
-    new Main;
-    new Main;
-    new Main;
-    
-
-    $main->display();
-
-    echo Main::$numberOfInstance;
+    echo Main::$numberOfInstances;

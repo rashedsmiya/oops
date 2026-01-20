@@ -3,14 +3,14 @@
      namespace App;
 
      class Main 
-     {
-        public static $numberOfInstance = 0;
+     { 
+        public static $numberOfInstances = 0;
+
         public function __construct()
         {
-            self::$numberOfInstance += 1;
+            self::$numberOfInstances++;
         }
-        public function display()
-        {
-            echo "Welcome to Main Class.<br>";
+        public function display(){
+            echo "Welcome to Main";
         }
      }
