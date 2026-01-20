@@ -1,18 +1,16 @@
 <?php 
 
-    namespace App;
-    use App\Model\User;
-    class Main 
-    {
-        public $user;
+     namespace App;
 
-        public function __construct(User $user)
+     class Main 
+     {
+        public static $numberOfInstance = 0;
+        public function __construct()
         {
-            $this->user = $user;
+            self::$numberOfInstance += 1;
         }
-
-        public function hello(): void
+        public function display()
         {
-            $this->user->display();
+            echo "Welcome to Main Class.<br>";
         }
-    }
+     }
