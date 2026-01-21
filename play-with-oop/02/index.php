@@ -1,6 +1,7 @@
 <?php 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     require 'vender/autoload.php';
 
     use App\Main;
@@ -17,6 +18,26 @@
     $main9->display();
 
     echo Main::$numberOfInstances;
+=======
+    require 'vendor/autoload.php';
+
+    use App\School;
+    use App\Student;
+
+
+    $std = new Student;
+    $std->find();
+
+
+    echo "<br/>";
+    School::student()->find();
+    School::student()->insert();
+
+    School::teacher()->insert();
+    School::teacher()->delete();
+
+    School::student()->delete();
+>>>>>>> Stashed changes
 =======
     require 'vendor/autoload.php';
 
