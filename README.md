@@ -1,6 +1,6 @@
 # PHP Object Oriented Programming (OOP) Projects
 
-This repository contains a collection of Java projects and exercises focusing on Object Oriented Programming (OOP) concepts.
+This repository contains a collection of PHP projects and exercises focusing on Object Oriented Programming (OOP) concepts.
 
 ## Description
 
