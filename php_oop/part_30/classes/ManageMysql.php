@@ -12,7 +12,7 @@
         public function setUser($user){
             // Your code will be go here....
         }
-
+        
         public function setPass($pass){
             // Your code will be go here....
         }

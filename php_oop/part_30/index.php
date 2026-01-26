@@ -1,13 +1,16 @@
 <?php 
 
    
-spl_autoload_register(function($class_name){
+    spl_autoload_register(function($class_name){
 
-    include "classes/{$class_name}.php";
-});
+        include "classes/".$class_name.".php";
 
+    });
 
-   $db = new Database();
-   $db->setDriver('mysql');
-   $db->connect("localhost","user","db","pass");
+    $db = new Database();
+    $db->setDriver("mysql");
+    $db->connect("host", "user", "db", "pass");
+
+    
+
    
