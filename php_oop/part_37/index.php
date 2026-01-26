@@ -1,12 +1,5 @@
 <?php 
 
-    
-   $db = new mysqli ("localhost","root","","mysql");
+    $db  = new mysqli("localhost","root","11","userdata");
 
-    if(mysqli_connect_error()){
-        echo "Connection Failed!";
-        exit();
-    }else{
-        echo "Connection Successful!";
-    }
-
+     
