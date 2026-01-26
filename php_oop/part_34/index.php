@@ -5,15 +5,15 @@
     });
 
     $obj = new Observable();
-    
+
     $sk = new Skype();
 
     $gt = new Gtalk();
 
     $s = new stdClass();
 
-    $obj->register($sk);
-    $obj->register($gt);
+    $obj->register(object: $sk);
+    $obj->register(object: $gt);
     $obj->register($s);
     $obj->stateChange();
 

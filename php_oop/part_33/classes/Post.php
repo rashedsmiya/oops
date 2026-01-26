@@ -29,4 +29,5 @@
     public function rewind(): void{
         reset($this->posts);
     }
+    
    }

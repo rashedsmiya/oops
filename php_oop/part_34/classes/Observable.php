@@ -9,7 +9,7 @@
             } else {
                 echo "Object should be implements oberver interface.....<br>";
             }
-        }
+        }  
 
         public function stateChange(){
             foreach($this->observers as $overver){

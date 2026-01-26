@@ -19,6 +19,7 @@
 
        $bb = new BBCodeParser($comment);
        $commentContent = $bb->getContent();
+       
     } elseif($BBCodeEnabled == false && $EmoticonEnabled == false){
        $bb = new BBCodeParser($post);
        $postContent = $bb->getContent();
