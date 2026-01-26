@@ -5,7 +5,7 @@
     public $var;
     private $posts = array();
     function __construct($posts){
-        if(is_array($posts)){
+        if(is_array(value: $posts)){
             $this->posts = $posts;
         }
     }
@@ -26,7 +26,7 @@
         return $this->current() !== false;
     }
     
-    public function rewind(){
-        return reset($this->posts);
+    public function rewind(): void{
+        reset($this->posts);
     }
    }
