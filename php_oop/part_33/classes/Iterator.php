@@ -6,4 +6,4 @@
         public function key();
         public function valid();
         public function rewind();
-    }
+    } 

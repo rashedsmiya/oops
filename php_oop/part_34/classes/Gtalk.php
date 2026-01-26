@@ -6,5 +6,4 @@
         echo "Message From Google. Talk.<br/>";
        }
     }  
-
-    ?>
+    
