@@ -7,16 +7,18 @@
     $user = new User();
     $msg = $user->getMsg(); 
 
-    switch ($msg) {
+    switch ($msg) { 
         case 'email':
-            $objmsg = new SendEmail(); 
+            $objmsg = new sendEmail(); 
             break;
         case 'sms':
-            $objmsg = new SendSms(); 
+            $objmsg = new sendSms(); 
             break; 
         case 'fax':
-            $objmsg = new SendFax();  
+            $objmsg = new sendFax();  
             break;    
     }
     $objmsg->notification();
+    
+
     
