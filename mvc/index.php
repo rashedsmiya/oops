@@ -3,14 +3,35 @@
     include_once "system/libs/Main.php";
     include_once "system/libs/DController.php";
 
-    $url = $_GET['url'];
+    $url = isset($_GET['url']) ? $_GET['url'] : null;
+
     $url = rtrim($url, '/');
     $url = explode("/", $url);
 
-    include 'app/controllers/'.$url[0].'.php';
 
-    $ctlr = new $url[0](); 
-    $ctlr->jahan();
+     $url = isset($_GET["url"]) ? $_GET["url"] : null; 
+     if($url != null) {
+         $url = rtrim($url, "/");
+         $url = explode("/", $url);
+     } else {
+         unset($url);
+     }
+
+     if (isset($url[0])) {
+        include 'app/controllers/'.$url[0].'.php';
+        $ctlr = new $url[0]();
+        if(isset($url[2])) {
+            $ctlr->{$url[1]}($url[2]);
+        } else {
+            if(isset($url[1])) {
+                $ctlr->{$url[1]}();
+            } else {
+               # code...
+            }
+        }
+     } else {
+        # code ...
+     }
 
 
 ?> 
